@@ -1,0 +1,20 @@
+{
+  "name": "xlr",
+  "version": "1.1.2",
+  "description": "Simple data set export to Excel xlsx file",
+  "main": "index.js",
+  "repository": "https://github.com/madeagency/xlr",
+  "keywords": [
+    "Excel",
+    "xlsx"
+  ],
+  "author": "Made Agency, Francois Laubscher <francoisl@made.co.za>",
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "engine-strict": true,
+  "license": "ISC",
+  "dependencies": {
+    "node-zip": "^1.1.1"
+  }
+}

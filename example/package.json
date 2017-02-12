@@ -1,0 +1,11 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "node-excel example app",
+  "main": "app.js",
+  "author": "Francois Laubscher",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
