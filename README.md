@@ -1,4 +1,5 @@
 # XLR
+[![Code Climate](https://codeclimate.com/repos/58a2efd0c075372cbb00271c/badges/51daec96fa87c65918c5/gpa.svg)](https://codeclimate.com/repos/58a2efd0c075372cbb00271c/feed)
 
 A simple node module for exporting a data set to an Excel xlsx file.
 
