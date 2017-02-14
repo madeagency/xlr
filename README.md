@@ -1,6 +1,6 @@
 # XLR
 
-A simple node.js module for exporting a data set to an Excel xlsx file.
+A simple node module for exporting a data set to an Excel xlsx file.
 
 ## Using XLR
 

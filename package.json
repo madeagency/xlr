@@ -3,15 +3,21 @@
   "version": "1.1.2",
   "description": "Simple data set export to Excel xlsx file",
   "main": "index.js",
-  "repository": "https://github.com/madeagency/xlr",
   "keywords": [
     "Excel",
-    "xlsx"
+    "xlsx",
+    "node",
+    "spreadsheet"
   ],
-  "author": "Made Agency, Francois Laubscher <francoisl@made.co.za>",
+  "author": "Francois Laubscher, Made Agency",
   "engines": {
     "node": ">=6.9.3"
   },
+  "repository": "https://github.com/madeagency/xlr",
+  "bugs": {
+    "url": "https://github.com/madeagency/xlr/issues"
+  },
+  "homepage": "https://github.com/madeagency/xlr#readme",
   "engine-strict": true,
   "license": "MIT",
   "dependencies": {
