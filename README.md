@@ -1,6 +1,7 @@
 # XLR
 
 A simple node module for exporting a data set to an Excel xlsx file.
+Heavily inspired by [Node-Excel-Export](https://github.com/functionscope/Node-Excel-Export)
 
 ## Using XLR
 
