@@ -19,7 +19,7 @@ module.exports = {
     [{ value: 'First Name', style: 1 }, { value: 'Last Name', style: 1 }, { value: 'Email', style: 1 }],
     ['Bruce', 'Wayne', 'info@bat.man'],
     ['Clark', 'Kent', 'info@super.man'],
-    ['Testing a merge cell because reasons', '', 'test@email.com'],
+    ['This cell is going to be merged', '', 'test@email.com'],
     ['Peter', 'Parker', 'info@spider.man']
   ],
   merge: [

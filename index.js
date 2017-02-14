@@ -18,7 +18,7 @@ const {
 // generate workbook
 const generateWorkbook = ({name}) => `${sheetsFront}${sheet(name)}${sheetsBack}`
 // generate workbook content types
-const generateContentTypes = ({fileName}) => `${contentTypeFront}${contentTypeOverride(fileName)}${contentTypeBack}`
+const generateContentTypes = ({name}) => `${contentTypeFront}${contentTypeOverride(name)}${contentTypeBack}`
 // generate workbook relationships
 const generateRelationships = ({name}) => `${relationshipFront}${sheetRelationship(name)}${relationshipBack}`
 

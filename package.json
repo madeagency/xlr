@@ -13,7 +13,7 @@
     "node": ">=6.9.3"
   },
   "engine-strict": true,
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "node-zip": "^1.1.1"
   }
