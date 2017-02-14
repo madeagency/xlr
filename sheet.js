@@ -1,5 +1,5 @@
 const { sheetFront, sheetBack, columnDefinition } = require('./constants')
-const { addCell, convertToBit } = require('./helpers')
+const { addMergeCell, addCell, convertToBit } = require('./helpers')
 
 function buildRow (columns, data, rowIndex) { 
   const rows = [`<x:row r="${rowIndex}" spans="1:${columns.length}">`]
@@ -13,9 +13,10 @@ function buildRow (columns, data, rowIndex) {
     const cellType = columns[i].type
 
     const options = { 
-      cellIndex: cellIndex + rowIndex,
+      cellIndex,
       value: cellData,
-      styleIndex
+      styleIndex,
+      rowIndex
     }
 
     switch (cellType) {
@@ -35,14 +36,24 @@ function buildRow (columns, data, rowIndex) {
   return rows.join('')
 }
 
-function Sheet (config) {
-  const { columns, rows } = config
+function buildMergeCells (merge) {
+  if (merge) {
+    const mergeCells = merge.map((mergeCell) => addMergeCell(mergeCell)).join('')
+    return `<mergeCells count="${merge.length}">${mergeCells}</mergeCells>`
+  } else {
+    return ''
+  }
+}
+
+function Sheet ({ columns, rows, merge }) {
+  if (!columns) throw 'No columns provided'
+  if (!rows) throw 'No row data provided'
 
   // build column elements
   const columnDefinitions = columns.map((column, i) => columnDefinition(column.width, i + 1)).join('')  
   // build xml rows
   const xmlRows = rows.map((rowData, i) => buildRow(columns, rowData, i + 1)).join('')
-  return `${sheetFront}<cols>${columnDefinitions}</cols><x:sheetData>${xmlRows}</x:sheetData>${sheetBack}`
+  return `${sheetFront}<cols>${columnDefinitions}</cols><x:sheetData>${xmlRows}</x:sheetData>${buildMergeCells(merge)}${sheetBack}`
 }
 
 module.exports = Sheet

@@ -14,8 +14,8 @@ const contentTypeFront = '<?xml version="1.0" encoding="utf-8"?><Types xmlns="ht
 const contentTypeBack = '</Types>'
 
 const contentTypeOverride = (fileName) => `<Override PartName="/${fileName}" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml" />`
-const sheetRelationship = (sheetName, index) => `<Relationship Id="rId${index}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/${sheetName}.xml"/>`
-const sheet = (sheetName, index) => `<sheet name="${sheetName}" sheetId="${index}" r:id="rId${index}"/>`
+const sheetRelationship = (sheetName) => `<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/${sheetName}.xml"/>`
+const sheet = (sheetName) => `<sheet name="${sheetName}" sheetId="1" r:id="rId1"/>`
 const columnDefinition = (width, index) => `<col customWidth="1" width="${width}" max="${index}" min="${index}"/>`
 
 module.exports = {

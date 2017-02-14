@@ -16,49 +16,32 @@ const {
 } = require('./constants')
 
 // generate workbook
-function generateWorkbook (configs) {
-  const workbook = configs.map((config, i) => sheet(config.name, i + 1)).join('')
-  return `${sheetsFront}${workbook}${sheetsBack}`
-}
-
+const generateWorkbook = ({name}) => `${sheetsFront}${sheet(name)}${sheetsBack}`
 // generate workbook content types
-function generateContentTypes(configs) {
-  const contentTypes = configs.map((config) => contentTypeOverride(config.fileName)).join('')
-  return `${contentTypeFront}${contentTypes}${contentTypeBack}`
-}
-
+const generateContentTypes = ({fileName}) => `${contentTypeFront}${contentTypeOverride(fileName)}${contentTypeBack}`
 // generate workbook relationships
-function generateRelationships(configs) {
-  const relationships = configs.map((config, i) => sheetRelationship(config.name, i + 1)).join('')
-  return `${relationshipFront}${relationships}${relationshipBack}`
-}
+const generateRelationships = ({name}) => `${relationshipFront}${sheetRelationship(name)}${relationshipBack}`
 
-
-function xlr (options) {
+function xlr (config) {
   const xlsx = nodeZip(xlsTemplate, { base64: true, checkCRC32: false })
-  const configs = typeof options === 'object' ? [options] : options
 
-  // only write the stylesheet once, so use first conf object
-  if (configs[0].stylesXmlFile) {
-    const styles = fs.readFileSync(configs[0].stylesXmlFile, 'utf8')
+  if (config.stylesXmlFile) {
+    const styles = fs.readFileSync(config.stylesXmlFile, 'utf8')
     if (styles) {
       xlsx.file('xl/styles.xml', styles)
     }
   }
 
   // write constants and static files
-  xlsx.file('xl/workbook.xml', generateWorkbook(configs))
-  xlsx.file('xl/_rels/workbook.xml.rels', generateRelationships(configs))
+  xlsx.file('xl/workbook.xml', generateWorkbook(config))
+  xlsx.file('xl/_rels/workbook.xml.rels', generateRelationships(config))
   xlsx.file('_rels/.rels', relationships)
-  xlsx.file('[Content_Types].xml', generateContentTypes(configs))
+  xlsx.file('[Content_Types].xml', generateContentTypes(config))
 
-  // generate worksheets
-  configs.forEach((config) => {
-    // replace all characters which would cause Excel to break
-    const fileName = config.name ? config.name.replace(/[*?\]\[\/\/][ ]/g, '-') : 'sheet'
-    xlsx.file(`xl/worksheets/${fileName}.xml`, Sheet(config))
-  })
-
+  // replace all characters which would cause Excel to break
+  const fileName = config.name ? config.name.replace(/[*?\]\[\/\/][ ]/g, '-') : 'sheet'
+  // generate worksheet
+  xlsx.file(`xl/worksheets/${fileName}.xml`, Sheet(config))
   return xlsx.generate({ base64: false, compression: 'DEFLATE' })
 }
 

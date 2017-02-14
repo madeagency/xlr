@@ -29,10 +29,10 @@ exports.convertToBit = function (value) {
 }
 
 exports.addCell = function (options) {
-  const cellReference = getColumnLetter(options.cellIndex)
+  const { rowIndex, type } = options
+  const cellReference = `${getColumnLetter(options.cellIndex)}${rowIndex}`
   const styleIndex = options.styleIndex || 0
   const value = options.value || ''
-  const type = options.type
 
   if (type) {
     return `<x:c r="${cellReference}" s="${styleIndex}" t="${type}"><x:v>${value}</x:v></x:c>`
@@ -40,5 +40,11 @@ exports.addCell = function (options) {
     const encodedValue = value.replace(/&/g, '&amp;').replace(/'/g, '&apos;').replace(/>/g, '&gt;').replace(/</g, '&lt;')
     return `<x:c r="${cellReference}" s="${styleIndex}" t="inlineStr"><x:is><x:t>${encodedValue}</x:t></x:is></x:c>`
   }
+}
+
+exports.addMergeCell = function ({ row, fromColumn, toColumn }) {
+  const fromCellReference = `${getColumnLetter(fromColumn)}${row}`
+  const toCellReference = `${getColumnLetter(toColumn)}${row}`
+  return `<mergeCell ref="${fromCellReference}:${toCellReference}" />`
 }
 
