@@ -10,7 +10,7 @@
   ],
   "author": "Made Agency, Francois Laubscher <francoisl@made.co.za>",
   "engines": {
-    "node": ">=6.9.0"
+    "node": ">=6.9.3"
   },
   "engine-strict": true,
   "license": "ISC",
