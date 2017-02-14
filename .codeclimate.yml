@@ -2,3 +2,10 @@ engines:
   eslint:
     enabled: true
     channel: "eslint-3"
+
+ratings:
+   paths:
+   - "constants.js"
+   - "helpers.js"
+   - "sheet.js"
+   - "index.js"
