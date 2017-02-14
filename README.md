@@ -85,7 +85,7 @@ app.listen(3001, function () {
 License
 -------
 
-XLR is © 2016 MADE Code PTY Ltd.
+XLR is © 2017 MADE Code PTY Ltd.
 It is free software, and may be redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: LICENSE
