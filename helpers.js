@@ -32,8 +32,8 @@ exports.addCell = function (options) {
   const { rowIndex, type } = options
   const cellReference = `${getColumnLetter(options.cellIndex)}${rowIndex}`
   const styleIndex = options.styleIndex || 0
-  // check if valid value and cast to string :: this fixes the issue when passing non-string values when column type is string
-  const hasValidValue = options.value || options.value === false
+  // check if valid value and cast to string -> this fixes the issue when passing non-string values when column type is string
+  const hasValidValue = options.value != null
   const value = hasValidValue ? options.value.toString() : ''
 
   if (type) {
