@@ -32,7 +32,9 @@ exports.addCell = function (options) {
   const { rowIndex, type } = options
   const cellReference = `${getColumnLetter(options.cellIndex)}${rowIndex}`
   const styleIndex = options.styleIndex || 0
-  const value = options.value || ''
+  // check if valid value and cast to string -> this fixes the issue when passing non-string values when column type is string
+  const hasValidValue = options.value != null
+  const value = hasValidValue ? options.value.toString() : ''
 
   if (type) {
     return `<x:c r="${cellReference}" s="${styleIndex}" t="${type}"><x:v>${value}</x:v></x:c>`
@@ -47,4 +49,3 @@ exports.addMergeCell = function ({ row, fromColumn, toColumn }) {
   const toCellReference = `${getColumnLetter(toColumn)}${row}`
   return `<mergeCell ref="${fromCellReference}:${toCellReference}" />`
 }
-

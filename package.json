@@ -1,6 +1,6 @@
 {
   "name": "xlr",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Simple data set export to Excel xlsx file",
   "main": "index.js",
   "keywords": [
