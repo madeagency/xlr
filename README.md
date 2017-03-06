@@ -1,6 +1,8 @@
 # XLR
 [![Code Climate](https://codeclimate.com/repos/58a2efd0c075372cbb00271c/badges/51daec96fa87c65918c5/gpa.svg)](https://codeclimate.com/repos/58a2efd0c075372cbb00271c/feed)
 
+[![https://nodei.co/npm/xlr.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/xlr.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/xlr)
+
 A simple node module for exporting a data set to an Excel xlsx file.
 
 Heavily inspired by [Node-Excel-Export](https://github.com/functionscope/Node-Excel-Export)
