@@ -1,5 +1,6 @@
 # XLR
 [![Code Climate](https://codeclimate.com/repos/58a2efd0c075372cbb00271c/badges/51daec96fa87c65918c5/gpa.svg)](https://codeclimate.com/repos/58a2efd0c075372cbb00271c/feed)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmadeagency%2Fxlr.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmadeagency%2Fxlr?ref=badge_shield)
 
 [![https://nodei.co/npm/xlr.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/xlr.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/xlr)
 
@@ -109,3 +110,7 @@ We're always looking for talented people who love programming. [Get in touch] wi
 
 [Get in touch]: https://www.made.co.za?utm_source=github
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmadeagency%2Fxlr.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmadeagency%2Fxlr?ref=badge_large)
