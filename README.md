@@ -1,4 +1,6 @@
 # XLR
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/madeagency/xlr.svg)](https://greenkeeper.io/)
 [![Code Climate](https://codeclimate.com/repos/58a2efd0c075372cbb00271c/badges/51daec96fa87c65918c5/gpa.svg)](https://codeclimate.com/repos/58a2efd0c075372cbb00271c/feed)
 
 [![https://nodei.co/npm/xlr.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/xlr.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/xlr)
