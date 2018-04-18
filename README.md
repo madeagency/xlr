@@ -50,17 +50,14 @@ app.get('/', function (req, res) {
     name: 'report-is-a-thing',
     cols: [
       {
-        caption: '',
         type: 'string',
         width: 15
       },
       {
-        caption: '',
         type: 'string',
         width: 25
       },
       {
-        caption: '',
         type: 'string',
         width: 30
       }
