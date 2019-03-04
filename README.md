@@ -49,25 +49,20 @@ app.get('/', function (req, res) {
     stylesXmlFile: __dirname + '/styles.xml',
     name: 'report-is-a-thing',
     cols: [
-      {
-        type: 'string',
-        width: 15
-      },
-      {
-        type: 'string',
-        width: 25
-      },
-      {
-        type: 'string',
-        width: 30
-      }
+      { type: 'string', width: 15 },
+      { type: 'string', width: 25 },
+      { type: 'string', width: 30 },
+      { type: 'number', width: 15 }
     ],
     rows: [
-      [{ value: 'First Name', style: 1 }, { value: 'Last Name', style: 1 }, { value: 'Email', style: 1 }],
-      ['Bruce', 'Wayne', 'info@bat.man'],
-      ['Clark', 'Kent', 'info@super.man'],
-      ['This cell is going to be merged', '', 'test@email.com'],
-      ['Peter', 'Parker', 'info@spider.man']
+      [{ value: 'First Name', style: 1 }, 
+       { value: 'Last Name', style: 1 }, 
+       { value: 'Email', style: 1 }, 
+       { value: 'age', style: 1, type: 'string' }],
+      ['Bruce', 'Wayne', 'info@bat.man', 25],
+      ['Clark', 'Kent', 'info@super.man', 35],
+      ['This cell is going to be merged', '', 'test@email.com', 45],
+      ['Peter', 'Parker', 'info@spider.man', 55]
     ],
      merge: [
       { row: 4, fromColumn: 1, toColumn: 2 } 

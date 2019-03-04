@@ -10,7 +10,7 @@ function buildRow (columns, data, rowIndex) {
     const isObject = typeof data[i] === 'object'
     const cellData = isObject ? data[i].value : data[i]
     const styleIndex = isObject ? data[i].style : null
-    const cellType = columns[i].type
+    const cellType = columns[i].type || columns[i].type
 
     const options = { 
       cellIndex,
